@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+    	<meta charset="UTF-8">
+    	<title>źblog</title>
+    </head>
+    <body>
+% my %args = @_[0];
+% for %args<articles>.list -> $art {
+        <h2> <%= $art<title> %> </h2>
+        <i><small> Published: <%= $art<pubdate> %> </small></i>
+        <p>  <%= $art<text> %> </p>
+        <hr />
+% }
+    <form method='POST' action='/post'>
+        Title: <input name='title' type='text'></input><br/>
+        Text:<br/>
+        <textarea name='text' cols='72' rows='20'></textarea><br/>
+        <input type='submit'></input>
+    </form>
+    </body>
+</html>
